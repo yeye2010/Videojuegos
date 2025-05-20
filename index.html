@@ -1,56 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Game Blog</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Gamer</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-    <header>
-        <!-- Include header content -->
-        <div id="header-placeholder"></div>
-    </header>
-    
+  <header>
+    <h1>🎮 Blog Gamer</h1>
     <nav>
-        <!-- Include navigation content -->
-        <div id="navigation-placeholder"></div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="entrada1.html">Elden Ring</a></li>
+        <li><a href="entrada2.html">Zelda TOTK</a></li>
+        <li><a href="entrada3.html">Hollow Knight</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <h1>Welcome to the Video Game Blog</h1>
-        <p>Explore the latest entries about video games, reviews, and gaming culture.</p>
+  <main>
+    <section class="intro">
+        <h2>Bienvenido a mi blog de videojuegos</h2>
+        <p>Explora análisis, recomendaciones y contenido multimedia sobre los mejores títulos de la industria.</p>
         
-        <section class="blog-entries">
-            <article>
-                <h2><a href="src/entries/entry1.html">Entry 1: The Evolution of Gaming</a></h2>
-                <img src="images/entry1/thumbnail.jpg" alt="Evolution of Gaming">
-                <p>A look at how video games have evolved over the decades.</p>
-            </article>
-            <article>
-                <h2><a href="src/entries/entry2.html">Entry 2: Top 10 Games of 2023</a></h2>
-                <img src="images/entry2/thumbnail.jpg" alt="Top 10 Games of 2023">
-                <p>Discover the best games released this year.</p>
-            </article>
-            <article>
-                <h2><a href="src/entries/entry3.html">Entry 3: The Impact of Indie Games</a></h2>
-                <img src="images/entry3/thumbnail.jpg" alt="Impact of Indie Games">
-                <p>How indie games are changing the gaming landscape.</p>
-            </article>
-        </section>
-    </main>
+        <!-- Imagen pequeña con id para JS -->
+        <img src="images/Banner juegos.webp" alt="Banner de videojuegos" class="img-pequena" id="bannerImg" />
+      
+        <!-- Modal oculto inicialmente -->
+        <div class="modal" id="modal">
+          <img src="images/Banner juegos.webp" alt="Banner de videojuegos ampliado" id="modalImg" />
+        </div>
+      </section>           
 
-    <footer>
-        <!-- Include footer content -->
-        <div id="footer-placeholder"></div>
-    </footer>
+    <section class="entradas">
+      <h2>Lo más épico del gaming, justo aquí
+      </h2>
+      <div class="entrada">
+        <h3><a href="entrada1.html"> Elden Ring: la revolución de FromSoftware</a></h3>
+        <img src="images/Elden Ring 2.webp" alt="Elden Ring" class="img-pequena"/>
+        <p>Un RPG desafiante con mundo abierto que redefine el género...</p>
+      </div>
+      <div class="entrada">
+        <h3><a href="entrada2.html">Zelda: Tears of the Kingdom – Innovación total</a></h3>
+        <img src="images/zelda-totk.webp" alt="Zelda TOTK" class="img-pequena"/>
+        <p>Una secuela que supera todas las expectativas del clásico...</p>
+      </div>
+      <div class="entrada">
+        <h3><a href="entrada3.html">Hollow Knight: arte y precisión indie</a></h3>
+        <img src="images/3.png" alt="Hollow Knight" class="img-pequena"/>
+        <p>Explora el mundo de Hallownest con este metroidvania oscuro y poético...</p>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Load header, navigation, and footer content
-        document.getElementById('header-placeholder').innerHTML = '<!-- Header content goes here -->';
-        document.getElementById('navigation-placeholder').innerHTML = '<!-- Navigation content goes here -->';
-        document.getElementById('footer-placeholder').innerHTML = '<!-- Footer content goes here -->';
-    </script>
+  <footer>
+    <p>&copy; 2025 Blog Gamer. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+  const bannerImg = document.getElementById('bannerImg');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
+
+  // Al hacer clic en la imagen pequeña, mostrar el modal
+  bannerImg.addEventListener('click', function() {
+    modal.style.display = 'flex';
+  });
+
+  // Al hacer clic en la imagen grande o en cualquier lugar del modal, cerrar el modal
+  modal.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+</script>
 </body>
 </html>
